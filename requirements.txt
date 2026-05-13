@@ -2,9 +2,9 @@
 
 fastapi
 uvicorn[standard]
-langchain
-langchain-groq
-langchain-core
+langchain==0.2.16
+langchain-core==0.2.38
+langchain-groq==0.1.9
 google-api-python-client
 google-auth
 pydantic
