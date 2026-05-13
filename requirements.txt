@@ -1,0 +1,13 @@
+# requirements.txt — install with: pip install -r requirements.txt
+
+fastapi
+uvicorn[standard]
+langchain
+langchain-groq
+langchain-core
+google-api-python-client
+google-auth
+pydantic
+python-dotenv
+streamlit
+requests
