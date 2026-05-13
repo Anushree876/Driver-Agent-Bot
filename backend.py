@@ -56,10 +56,12 @@ SERVICE_ACCOUNT_INFO = json.loads(
 )
 def get_drive_service():
     """Build and return a Google Drive API service object using service account."""
+    
     creds = service_account.Credentials.from_service_account_info(
-    SERVICE_ACCOUNT_INFO,
-    scopes=SCOPES
-)
+        SERVICE_ACCOUNT_INFO,
+        scopes=SCOPES
+    )
+
     return build("drive", "v3", credentials=creds)
 
 
