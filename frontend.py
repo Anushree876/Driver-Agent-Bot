@@ -14,7 +14,7 @@ RUN:
   streamlit run frontend.py
 
 ENV VARIABLES (optional, can also be typed in sidebar):
-  BACKEND_URL=http://localhost:8000
+  BACKEND_URL=https://conversation-bot-1jeh.onrender.com
 """
 
 import streamlit as st
@@ -140,7 +140,7 @@ if "messages" not in st.session_state:
 
 # Backend URL
 if "backend_url" not in st.session_state:
-    st.session_state.backend_url = "http://localhost:8000"
+    st.session_state.backend_url = "https://conversation-bot-1jeh.onrender.com"
 
 
 # ─────────────────────────────────────────────
