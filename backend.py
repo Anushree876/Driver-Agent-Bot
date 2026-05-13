@@ -49,15 +49,17 @@ load_dotenv()
 # ─────────────────────────────────────────────
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
-SERVICE_ACCOUNT_FILE = os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON", "service_account.json")
 FOLDER_ID = os.getenv("DRIVE_FOLDER_ID", "")
 
-
+SERVICE_ACCOUNT_INFO = json.loads(
+    os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON_CONTENT", "{}")
+)
 def get_drive_service():
     """Build and return a Google Drive API service object using service account."""
-    creds = service_account.Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_FILE, scopes=SCOPES
-    )
+    creds = service_account.Credentials.from_service_account_info(
+    SERVICE_ACCOUNT_INFO,
+    scopes=SCOPES
+)
     return build("drive", "v3", credentials=creds)
 
 
